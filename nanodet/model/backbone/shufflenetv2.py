@@ -202,6 +202,7 @@ class ShuffleNetV2(nn.Module):
         if pretrain:
             url = model_urls["shufflenetv2_{}".format(self.model_size)]
             if url is not None:
+                print("url++++++++++++++++=",url)
                 pretrained_state_dict = model_zoo.load_url(url)
                 print("=> loading pretrained model {}".format(url))
                 self.load_state_dict(pretrained_state_dict, strict=False)
